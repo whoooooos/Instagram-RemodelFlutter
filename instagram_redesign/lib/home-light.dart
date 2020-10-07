@@ -55,19 +55,42 @@ class Home extends StatelessWidget {
                           Flexible(
                             fit: FlexFit.tight,
                             flex: 2,
-                            child: Container(
-                              alignment: Alignment.topLeft,
-                              width: double.infinity,
-                              padding: EdgeInsets.only(top: 35.0, right: 60.0),
-                              child: FittedBox(
-                                  fit: BoxFit.fitWidth,
-                                  child: Image.asset('images/chat_black.png')),
+                            child: Stack(
+                              children: <Widget>[
+                                Container(
+                                  alignment: Alignment.topLeft,
+                                  width: double.infinity,
+                                  padding: EdgeInsets.only(top: 35.0, right: 60.0),
+                                  child: FittedBox(
+                                      fit: BoxFit.fitWidth,
+                                      child: Image.asset(
+                                          'images/chat_black.png')),
+                                ),
+                                Container(
+                                  width: double.infinity,
+                                  padding: EdgeInsets.all(3.0),
+                                  margin: EdgeInsets.only(
+                                      right: 60.0, left: 10.0, top: 30.0),
+                                  child: FittedBox(
+                                      fit: BoxFit.fitWidth,
+                                      child: Text(
+                                        '2',
+                                        style: TextStyle(
+                                          fontFamily: 'Archivo',
+                                          color: Colors.white,
+                                        ),
+                                      )),
+                                  decoration: BoxDecoration(
+                                      color: Color(0xffDD2A7B),
+                                      shape: BoxShape.circle),
+                                ),
+                              ],
                             ),
                           ),
                         ],
                       ),
                     ),
-                  ), //Header Area
+                  ),//Header Area
                   SizedBox(height: 3),
                   Flexible(
                     //Stories
